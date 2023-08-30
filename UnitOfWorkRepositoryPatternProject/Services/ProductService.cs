@@ -1,4 +1,5 @@
-﻿using UnitOfWorkRepositoryPatternProject.Interface;
+﻿using UnitOfWorkRepositoryPatternProject.Entities;
+using UnitOfWorkRepositoryPatternProject.Interface;
 using UnitOfWorkRepositoryPatternProject.Models;
 
 namespace UnitOfWorkRepositoryPatternProject.Services
@@ -12,6 +13,10 @@ namespace UnitOfWorkRepositoryPatternProject.Services
         public async Task<List<Product>> GetAllProduct()
         {
             return await _unitOfWork.repository<Product>().GetAll();
+        }
+        public async Task<List<Product>> GetAllProductWithPagination(PaginationDto pagination)
+        {
+            return await _unitOfWork.repository<Product>().GetAllWithPagination(pagination);
         }
     }
 }

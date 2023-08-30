@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using UnitOfWorkRepositoryPatternProject.Entities;
 using UnitOfWorkRepositoryPatternProject.Interface;
 using UnitOfWorkRepositoryPatternProject.Models;
 
@@ -34,6 +35,11 @@ namespace UnitOfWorkRepositoryPatternProject.Repository
         public void Update(T entity)
         {
            _dbContextClass.Set<T>().Update(entity);
+        }
+
+        public Task<List<T>> GetAllWithPagination(PaginationDto pagination)
+        {
+            return _dbContextClass.Set<T>().Skip((pagination.PageNumber - 1) * pagination.PageSize).Take(pagination.PageSize).ToListAsync();
         }
     }
 }
