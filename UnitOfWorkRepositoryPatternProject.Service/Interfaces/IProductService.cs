@@ -1,7 +1,7 @@
-﻿using UnitOfWorkRepositoryPatternProject.Entities;
-using UnitOfWorkRepositoryPatternProject.Models;
+﻿using UnitOfWorkRepositoryPatternProject.Core.Entities;
+using UnitOfWorkRepositoryPatternProject.Core.Models;
 
-namespace UnitOfWorkRepositoryPatternProject.Interface
+namespace UnitOfWorkRepositoryPatternProject.Service.Interface
 {
     public interface IProductService
     {

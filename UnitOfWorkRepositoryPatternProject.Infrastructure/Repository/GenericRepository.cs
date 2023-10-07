@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using UnitOfWorkRepositoryPatternProject.Entities;
-using UnitOfWorkRepositoryPatternProject.Interface;
-using UnitOfWorkRepositoryPatternProject.Models;
+using UnitOfWorkRepositoryPatternProject.Core.Entities;
+using UnitOfWorkRepositoryPatternProject.Core.Interface;
 
-namespace UnitOfWorkRepositoryPatternProject.Repository
+namespace UnitOfWorkRepositoryPatternProject.Infrastructure.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {

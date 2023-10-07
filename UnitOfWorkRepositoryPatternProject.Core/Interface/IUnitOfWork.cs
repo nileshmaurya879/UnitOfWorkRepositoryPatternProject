@@ -1,4 +1,4 @@
-﻿namespace UnitOfWorkRepositoryPatternProject.Interface
+﻿namespace UnitOfWorkRepositoryPatternProject.Core.Interface
 {
     public interface IUnitOfWork:IDisposable
     {

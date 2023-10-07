@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using UnitOfWorkRepositoryPatternProject.Core.Models;
 
-namespace UnitOfWorkRepositoryPatternProject.Models
+namespace UnitOfWorkRepositoryPatternProject.Infrastructure
 {
     public class DbContextClass : DbContext
     {

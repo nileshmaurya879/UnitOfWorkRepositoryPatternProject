@@ -1,8 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using UnitOfWorkRepositoryPatternProject.Entities;
-using UnitOfWorkRepositoryPatternProject.Interface;
-using UnitOfWorkRepositoryPatternProject.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using UnitOfWorkRepositoryPatternProject.Core.Entities;
+using UnitOfWorkRepositoryPatternProject.Core.Models;
+using UnitOfWorkRepositoryPatternProject.Service.Interface;
 
 namespace UnitOfWorkRepositoryPatternProject.Controllers
 {

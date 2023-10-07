@@ -1,4 +1,4 @@
-﻿namespace UnitOfWorkRepositoryPatternProject.Models
+﻿namespace UnitOfWorkRepositoryPatternProject.Core.Models
 {
     public class Product
     {

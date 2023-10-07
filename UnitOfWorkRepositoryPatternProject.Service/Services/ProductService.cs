@@ -1,8 +1,9 @@
-﻿using UnitOfWorkRepositoryPatternProject.Entities;
-using UnitOfWorkRepositoryPatternProject.Interface;
-using UnitOfWorkRepositoryPatternProject.Models;
+﻿using UnitOfWorkRepositoryPatternProject.Core.Entities;
+using UnitOfWorkRepositoryPatternProject.Core.Interface;
+using UnitOfWorkRepositoryPatternProject.Core.Models;
+using UnitOfWorkRepositoryPatternProject.Service.Interface;
 
-namespace UnitOfWorkRepositoryPatternProject.Services
+namespace UnitOfWorkRepositoryPatternProject.Service.Services
 {
     public class ProductService :IProductService
     {

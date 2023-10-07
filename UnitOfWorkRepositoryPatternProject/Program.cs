@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using UnitOfWorkRepositoryPatternProject.Extension;
-using UnitOfWorkRepositoryPatternProject.Models;
+using UnitOfWorkRepositoryPatternProject.Infrastructure;
+using UnitOfWorkRepositoryPatternProject.Infrastructure.Extension;
 
 var builder = WebApplication.CreateBuilder(args);
 

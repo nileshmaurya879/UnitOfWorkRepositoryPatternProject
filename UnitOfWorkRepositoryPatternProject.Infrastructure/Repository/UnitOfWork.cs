@@ -1,9 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
 using System.Collections;
-using UnitOfWorkRepositoryPatternProject.Interface;
-using UnitOfWorkRepositoryPatternProject.Models;
+using UnitOfWorkRepositoryPatternProject.Core.Interface;
 
-namespace UnitOfWorkRepositoryPatternProject.Repository
+namespace UnitOfWorkRepositoryPatternProject.Infrastructure.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {

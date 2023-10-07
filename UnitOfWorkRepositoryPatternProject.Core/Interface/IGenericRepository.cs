@@ -1,6 +1,7 @@
-﻿using UnitOfWorkRepositoryPatternProject.Entities;
+﻿
+using UnitOfWorkRepositoryPatternProject.Core.Entities;
 
-namespace UnitOfWorkRepositoryPatternProject.Interface
+namespace UnitOfWorkRepositoryPatternProject.Core.Interface
 {
     public interface IGenericRepository<T> where T : class
     {

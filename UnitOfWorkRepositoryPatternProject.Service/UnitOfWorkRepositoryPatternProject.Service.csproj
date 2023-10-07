@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\UnitOfWorkRepositoryPatternProject.Core\UnitOfWorkRepositoryPatternProject.Core.csproj" />
+  </ItemGroup>
+
 </Project>
