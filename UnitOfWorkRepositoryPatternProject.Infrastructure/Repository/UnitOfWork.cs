@@ -1,19 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
 using System.Collections;
-using UnitOfWorkRepositoryPatternProject.Interface;
-using UnitOfWorkRepositoryPatternProject.Models;
+using UnitOfWorkRepositoryPatternProject.Core.Interface;
 
-namespace UnitOfWorkRepositoryPatternProject.Repository
+namespace UnitOfWorkRepositoryPatternProject.Infrastructure.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
 
         public readonly DbContextClass _dbContext;
         private Hashtable _repositories;
+        public IProductRepository Product { get; }
 
-        public UnitOfWork(DbContextClass dbContext)
+        public UnitOfWork(DbContextClass dbContext, IProductRepository productRepository)
         {
             _dbContext = dbContext;
+            Product = productRepository;
         }
         public async Task<int> Complete()
         {

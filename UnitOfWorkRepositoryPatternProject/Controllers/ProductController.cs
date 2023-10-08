@@ -1,8 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using UnitOfWorkRepositoryPatternProject.Entities;
-using UnitOfWorkRepositoryPatternProject.Interface;
-using UnitOfWorkRepositoryPatternProject.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using UnitOfWorkRepositoryPatternProject.Core.Entities;
+using UnitOfWorkRepositoryPatternProject.Core.Models;
+using UnitOfWorkRepositoryPatternProject.Service.Interface;
 
 namespace UnitOfWorkRepositoryPatternProject.Controllers
 {
@@ -23,9 +22,9 @@ namespace UnitOfWorkRepositoryPatternProject.Controllers
                 var products = await _productService.GetAllProduct();
                 return Ok(products);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception(ex.Message);
             }
         }
 
@@ -37,9 +36,22 @@ namespace UnitOfWorkRepositoryPatternProject.Controllers
                 var products = await _productService.GetAllProductWithPagination(pagination);
                 return Ok(products);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception(ex.Message);
+            }
+        }
+        [HttpGet("GetProductWithCategory")]
+        public async Task<ActionResult> GetProductWithCategory()
+        {
+            try
+            {
+                var products = await _productService.GetProductWithCategory();
+                return Ok(products);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
     }

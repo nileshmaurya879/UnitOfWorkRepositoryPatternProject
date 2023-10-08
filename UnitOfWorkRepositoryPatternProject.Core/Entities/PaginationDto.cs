@@ -1,4 +1,4 @@
-﻿namespace UnitOfWorkRepositoryPatternProject.Entities
+﻿namespace UnitOfWorkRepositoryPatternProject.Core.Entities
 {
     public class PaginationDto
     {

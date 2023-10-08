@@ -1,16 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
-using UnitOfWorkRepositoryPatternProject.Entities;
-using UnitOfWorkRepositoryPatternProject.Interface;
-using UnitOfWorkRepositoryPatternProject.Models;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using UnitOfWorkRepositoryPatternProject.Core.Entities;
+using UnitOfWorkRepositoryPatternProject.Core.Interface;
 
-namespace UnitOfWorkRepositoryPatternProject.Repository
+namespace UnitOfWorkRepositoryPatternProject.Infrastructure.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         protected readonly DbContextClass _dbContextClass;
-
-        public GenericRepository(DbContextClass dbContextClass) { 
+        protected readonly IMapper _mapper;
+        public GenericRepository(DbContextClass dbContextClass, IMapper mapper) { 
             _dbContextClass = dbContextClass;
+            _mapper = mapper;
         }
         public async Task Add(T entity)
         {

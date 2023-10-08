@@ -1,11 +1,12 @@
 using Microsoft.EntityFrameworkCore;
-using UnitOfWorkRepositoryPatternProject.Extension;
-using UnitOfWorkRepositoryPatternProject.Models;
+using UnitOfWorkRepositoryPatternProject.Infrastructure;
+using UnitOfWorkRepositoryPatternProject.Infrastructure.Extension;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddService();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 // Add services for configuration of DBConext
 builder.Services.AddDbContext<DbContextClass>(option =>
 {
