@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using UnitOfWorkRepositoryPatternProject.Core.Interface;
 using UnitOfWorkRepositoryPatternProject.Infrastructure.Repository;
+using UnitOfWorkRepositoryPatternProject.Infrastructure.Repository.Products;
 using UnitOfWorkRepositoryPatternProject.Service.Interface;
 using UnitOfWorkRepositoryPatternProject.Service.Services;
 
@@ -12,6 +13,8 @@ namespace UnitOfWorkRepositoryPatternProject.Infrastructure.Extension
         {
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddScoped<IProductRepository, ProductRepository>();
 
             return services;
         }

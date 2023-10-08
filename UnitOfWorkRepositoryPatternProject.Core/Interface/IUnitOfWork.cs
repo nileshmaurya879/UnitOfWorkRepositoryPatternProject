@@ -4,5 +4,6 @@
     {
         IGenericRepository<TEntity> repository<TEntity>() where TEntity : class;
         Task<int> Complete();
+        IProductRepository Product { get; }
     }
 }

@@ -7,5 +7,6 @@ namespace UnitOfWorkRepositoryPatternProject.Service.Interface
     {
         Task<List<Product>> GetAllProduct();
         Task<List<Product>> GetAllProductWithPagination(PaginationDto pagination);
+        Task<IEnumerable<ProductDetailsDto>> GetProductWithCategory();
     }
 }

@@ -10,11 +10,17 @@ namespace UnitOfWorkRepositoryPatternProject.Infrastructure
         {
 
         }
-        public DbSet<Product> Products { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Product>().ToTable("Product");
+            modelBuilder.Entity<Product>(entity =>
+            {
+                entity.ToTable("Product");
+                entity.HasOne(x => x.Category).WithMany(y => y.Products).HasForeignKey(z => z.Cat_id).HasConstraintName("fk_Product_cat_id");
+            });
+            modelBuilder.Entity<Category>().ToTable("Category").HasKey(x=> x.Cat_id);
         }
     }
 }

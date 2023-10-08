@@ -22,9 +22,9 @@ namespace UnitOfWorkRepositoryPatternProject.Controllers
                 var products = await _productService.GetAllProduct();
                 return Ok(products);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception(ex.Message);
             }
         }
 
@@ -36,9 +36,22 @@ namespace UnitOfWorkRepositoryPatternProject.Controllers
                 var products = await _productService.GetAllProductWithPagination(pagination);
                 return Ok(products);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception(ex.Message);
+            }
+        }
+        [HttpGet("GetProductWithCategory")]
+        public async Task<ActionResult> GetProductWithCategory()
+        {
+            try
+            {
+                var products = await _productService.GetProductWithCategory();
+                return Ok(products);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
             }
         }
     }

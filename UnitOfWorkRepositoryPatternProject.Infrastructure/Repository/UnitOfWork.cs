@@ -9,10 +9,12 @@ namespace UnitOfWorkRepositoryPatternProject.Infrastructure.Repository
 
         public readonly DbContextClass _dbContext;
         private Hashtable _repositories;
+        public IProductRepository Product { get; }
 
-        public UnitOfWork(DbContextClass dbContext)
+        public UnitOfWork(DbContextClass dbContext, IProductRepository productRepository)
         {
             _dbContext = dbContext;
+            Product = productRepository;
         }
         public async Task<int> Complete()
         {
