@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using UnitOfWorkRepositoryPatternProject.Core.Entities;
 using UnitOfWorkRepositoryPatternProject.Core.Interface;
-using UnitOfWorkRepositoryPatternProject.Core.Models;
 
 namespace UnitOfWorkRepositoryPatternProject.Infrastructure.Repository.Products
 {
