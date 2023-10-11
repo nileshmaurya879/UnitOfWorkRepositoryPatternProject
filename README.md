@@ -1,1 +1,1 @@
-# UnitOfWorkRepositoryPatternProject
+Scaffold-DbContext "Name=Default" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -context DbContextClass -Tables  "Product",	"Category" -f
