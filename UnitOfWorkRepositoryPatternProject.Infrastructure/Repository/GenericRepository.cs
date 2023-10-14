@@ -23,9 +23,9 @@ namespace UnitOfWorkRepositoryPatternProject.Infrastructure.Repository
             _dbContextClass.Set<T>().Remove(entity);
         }
 
-        public Task<List<T>> GetAll()
+        public async Task<List<T>> GetAll()
         {
-           return _dbContextClass.Set<T>().ToListAsync();
+           return await _dbContextClass.Set<T>().ToListAsync();
         }
 
         public async Task<T> GetById(int id)
