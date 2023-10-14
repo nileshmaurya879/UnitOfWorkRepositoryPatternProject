@@ -14,13 +14,15 @@ namespace UnitOfWorkRepositoryPatternProject.Service.Services
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<List<Product>> GetAllProduct()
+        public async Task<List<ProductDetailsDto>> GetAllProduct()
         {
-            return await _unitOfWork.repository<Product>().GetAll();
+            var data = await _unitOfWork.repository<Product>().GetAll();
+            return _mapper.Map<List<ProductDetailsDto>>(data);
         }
-        public async Task<List<Product>> GetAllProductWithPagination(PaginationDto pagination)
+        public async Task<IEnumerable<ProductDetailsDto>> GetAllProductWithPagination(PaginationDto pagination)
         {
-            return await _unitOfWork.repository<Product>().GetAllWithPagination(pagination);
+            var product = await _unitOfWork.repository<Product>().GetAllWithPagination(pagination);
+            return _mapper.Map<IEnumerable<ProductDetailsDto>>(product);
         }
         public async Task<IEnumerable<ProductDetailsDto>> GetProductWithCategory()
         {

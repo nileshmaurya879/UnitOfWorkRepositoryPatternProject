@@ -54,5 +54,18 @@ namespace UnitOfWorkRepositoryPatternProject.Controllers
                 throw new Exception(ex.Message);
             }
         }
+
+        //[HttpPost("AddProduct")]
+        //public async Task<ActionResult> AddProduct()
+        //{
+        //    try
+        //    {
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        throw new Exception(ex.Message);
+        //    }
+        //}
     }
 }
