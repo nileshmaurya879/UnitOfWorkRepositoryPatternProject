@@ -1,6 +1,4 @@
 ﻿using UnitOfWorkRepositoryPatternProject.Core.Entities;
-using UnitOfWorkRepositoryPatternProject.Core.Models;
-
 namespace UnitOfWorkRepositoryPatternProject.Service.Interface
 {
     public interface IProductService
